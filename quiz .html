@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Easy Geography Quiz</title> 
+	  <link rel="icon" href="globe-png-39518.PNG">
+	  <center>
+	  <h1>Easy Geography Quiz</h1>
+	  <hr>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="quiz-styles.css">
+  
+  <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+        integrity= 
+"sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script> 
+		
+</head>
+
+	<style> 
+	body {
+  background-image: url("jewish.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#quiz-container {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#sus {
+  background: #ffffff;
+  border-radius: 1px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#question {
+  font-size: 24px;
+}
+
+#options .btn-option {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+#next-button {
+  margin-top: 20px;
+}
+
+#text-center {
+            margin: 0;
+            padding:0;
+            text-align: center;
+            position: absolute;
+            top: 60%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+		
+		#text-center1 {
+            margin: 0;
+            padding:0;
+            text-align: center;
+            position: absolute;
+            top: 65%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+		
+		#f {
+            position: fixed;
+            bottom: 50px;
+            left: 200px;
+            width: 600px;
+        }
+		
+		#g {
+            position: fixed;
+            bottom: 50px;
+            right: 200px;
+            width: 550px;
+        }
+		
+		box {
+			width: 300px;
+			border: 15px solid green;
+			padding: 50px;
+			margin: 20px;
+		}
+		#h {
+            position: fixed;
+            bottom: 600px;
+            right: 50px;
+            width: 250px;
+        }
+		
+		#j {
+            position: fixed;
+            bottom: 600px;
+            left: 50px;
+            width: 250px;
+        }
+		
+		#k {
+            position: fixed;
+            bottom: 10px;
+            left: 50px;
+            width: 10px;
+        }
+		
+	</style> 
+	
+<body>
+
+<div class="container mt-5">
+  <div id="quiz-container" class="text-center">
+      <h1 id="question">Question Text</h1>
+      <div id="options" class="my-4">
+	  
+      </div>
+      <button id="next-button" class="btn btn-primary">Next Question</button>
+  </div>
+</div>
+ 
+<img div id="f" src ="../quiz website/israeli.PNG" alt="World Map " width="600" style="border-radius: 20px; border:6px solid #C0C0C0" >
+<img div id="g" src ="../quiz website/Nice flags.JPG" alt="Flags " width="600" style="border-radius: 20px; border:6px solid #C0C0C0" >
+<img div id="h" src ="../quiz website/asian people.PNG" alt="sus " width="600" style="border-radius: 20px; border:6px solid #FFFF00" >
+<img div id="j" src ="../quiz website/asian people.PNG" alt="ohio " width="600" style="border-radius: 20px; border:6px solid #FFFF00" >
+<img div id="k" src ="../quiz website/manji.PNG" alt="rizz " width="600" style="border-radius: >
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="quiz-scripts.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  const questionElement = document.getElementById('question');
+  const optionsElement = document.getElementById('options');
+  const nextButton = document.getElementById('next-button');
+  let currentQuestionIndex = 0;
+
+  const questions = [
+  {
+          question: "What is the capital of the Philippines",
+          options: ["New York", "Cebu", "Manilla", "Tokyo"],
+          answer: "Manilla"
+      },
+  
+      {
+          question: "What is the capital of France?",
+          options: ["New York", "London", "Paris", "Dubai"],
+          answer: "Paris"
+      },
+      
+	   {
+          question: "How many islands are in the Philippines?",
+          options: ["7,641", "6,786", "9,100", "30,333"],
+          answer: "7,641"
+      },
+	  
+	  {
+          question: "What is the capital of Canada?",
+          options: ["Toronto", "Vancouver", "Ottawa", "Montreal"],
+          answer: "Ottawa"
+      },
+	  
+	  {
+          question: "What is the smallest country?",
+          options: ["Vatican City", "San Marino", "Monaco", "Russia"],
+          answer: "Vatican City"
+      },
+	  
+	  {
+          question: "What is the largest country?",
+          options: ["Canada", "Russia", "Australia", "Poland"],
+          answer: "Russia"
+      },
+	  
+	  {
+          question: "What is the capital city of California?",
+          options: ["Los Angeles", "Sacramento", "San Diego", "Palm Springs"],
+          answer: "Sacramento"
+      },
+	  
+	  {
+          question: "What was the previous capital of British Columbia?",
+          options: ["New Westminister", "Vancouver", "Kelowna", "Richmond"],
+          answer: "New Westminister"
+      },
+	  
+	  {
+          question: "What is the capital of Poland?",
+          options: ["Warsaw", "Athens", "Madrid", "Moscow"],
+          answer: "Warsaw"
+      },
+	  
+	  {
+          question: "Which country has the city Nagasaki?",
+          options: ["South Korea", "Taiwan", "Japan", "Vietnam"],
+          answer: "Japan"
+      },
+	  
+	  {
+          question: "Which province joined Canada in 1950?",
+          options: ["Newfoundland and Labrador", "Prince Edward Island", "Nunavut", "Whitehorse"],
+          answer: "Newfoundland and Labrador"
+      },
+	  
+	  {
+          question: "Which country owns the land of Greenland?",
+          options: ["Iceland", "Canada", "Denmark", "Norway"],
+          answer: "Denmark"
+      },
+	  
+	  {
+          question: "Which empire was the largest?",
+          options: ["American Empire", "Mongol Empire", "British Empire", "Spanish Empire"],
+          options: ["American Empire", "Mongol Empire", "British Empire", "Spanish Empire"],
+          answer: "Mongol Empire"
+      },
+	  
+	  {
+          question: "What was the biggest colony in the British Empire?",
+          options: ["British Raj", "Australia", "Canada", "South africa"],
+          answer: "Canada"
+      },
+	  
+	  {
+          question: "Which Empire was Brazil apart of before Brazil became Independant?",
+          options: ["Portuguese empire", "Spanish Empire", "British Empire", "Mongol Empire"],
+          answer: "Portuguese empire"
+      },
+	  
+	  {
+          question: "Which city has the highest human population?",
+          options: ["Tokyo", "Beijing", "Cairo", "Los Angeles"],
+          answer: "Tokyo"
+      },
+  ];
+
+  function loadQuestion(questionIndex) {
+      const question = questions[questionIndex];
+      questionElement.textContent = question.question;
+      optionsElement.innerHTML = '';
+      question.options.forEach(option => {
+          const button = document.createElement('button');
+          button.textContent = option;
+          button.classList.add('btn', 'btn-option');
+          button.onclick = () => selectOption(option);
+          optionsElement.appendChild(button);
+      });
+  }
+
+  function selectOption(selected) {
+      const question = questions[currentQuestionIndex];
+      if (selected === question.answer) {
+          alert('Correct!');
+      } else {
+          alert('Wrong!');
+      }
+  }
+
+  nextButton.addEventListener('click', () => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+          loadQuestion(currentQuestionIndex);
+      } else {
+          alert('Quiz completed!');
+          currentQuestionIndex = 0;
+      }
+      loadQuestion(currentQuestionIndex);
+  });
+
+  loadQuestion(currentQuestionIndex);
+});
+</script>
+
+</body>
+</html>
